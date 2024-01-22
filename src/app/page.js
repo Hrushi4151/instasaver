@@ -98,8 +98,24 @@ export default function Home() {
       await getdownlodurl();
     }
     else
-    {console.log(response.msg.payload[0].path);
-    setdurl(response.msg.payload[0].path);}
+    {
+      if((response.msg.payload[0].path)){console.log(response.msg.payload[0].path);
+    setdurl(response.msg.payload[0].path);}else{
+      setdisabled("")
+      seturl("");
+      toast.error("Invalid URL. Try Again", {
+        position: "top-center",
+        autoClose: 3000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+        theme: "colored",
+      });
+    }
+      
+  }
   };
 
   const dinwloadvideo = () => {
