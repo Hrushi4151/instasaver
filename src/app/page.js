@@ -1,12 +1,15 @@
 "use client";
 
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
+
 import Link from "next/link";
 import { useState } from "react";
 
 export default function Home() {
   const [url, seturl] = useState("");
-  // const [token, settoken] = useState("");
   const [durl, setdurl] = useState("");
+  const [disabled, setdisabled] = useState("");
   let token = "";
 
   const handlechange = (e) => {
@@ -16,8 +19,9 @@ export default function Home() {
 
   const handlesubmit = async (e) => {
     e.preventDefault();
-    alert(url);
-    const res = await fetch(`${process.env.NEXT_PUBLIC_HOST}api/gettoken`, {
+    setdisabled("disabled")
+    if(url){
+     if(url.startsWith("https://www.instagram.com")){ const res = await fetch(`${process.env.NEXT_PUBLIC_HOST}api/gettoken`, {
       method: "POST",
       headers: {
         Accept: "*/*",
@@ -27,13 +31,59 @@ export default function Home() {
     });
     const response = await res.json();
     console.log(response.response);
-    token = response.response.job_id;
-    setTimeout(getdownlodurl, 3000);
+    if(response.response.job_id)
+    {
+      token = response.response.job_id;
+      setTimeout(getdownlodurl, 3000);
+    }
+    else{
+      setdisabled("")
+      seturl("");
+      toast.error("Invalid URL. Try Again", {
+        position: "top-center",
+        autoClose: 3000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+        theme: "colored",
+      });
+    }}else{
+      setdisabled("")
+      seturl("");
+      toast.error("Invalid URL. Try Again", {
+        position: "top-center",
+        autoClose: 3000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+        theme: "colored",
+      });
+    }
+  
+  }else{
+      setdisabled("")
+      seturl("");
+      toast.error("Enter URL", {
+        position: "top-center",
+        autoClose: 3000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+        theme: "colored",
+      });
+    }
+
+    
   };
 
   const getdownlodurl = async () => {
     console.log(token);
-    let status = "";
     const res = await fetch(`${process.env.NEXT_PUBLIC_HOST}api/getdownloadurl`, {
       method: "POST",
       headers: {
@@ -47,14 +97,17 @@ export default function Home() {
     if (response.msg.status == "working") {
       await getdownlodurl();
     }
-    console.log(response.msg.payload[0].path);
-    setdurl(response.msg.payload[0].path);
+    else
+    {console.log(response.msg.payload[0].path);
+    setdurl(response.msg.payload[0].path);}
   };
 
   const dinwloadvideo = () => {
     //e.preventDefault();
     console.log("durl", durl); // Use console.log for debugging
-    setTimeout(() => window.open(durl, "_blank"), 2000);
+    setTimeout(() => window.open(durl, "_blank"), 900);
+    seturl("");
+    token="";
   };
 
   return (
@@ -96,9 +149,10 @@ export default function Home() {
                 <button
                   onClick={(e) => handlesubmit(e)}
                   type="submit"
-                  className=" flex cursor-pointer w-full justify-center rounded-md bg-indigo-600 px-3 py-1.5 text-sm font-semibold leading-6 text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
+                  disabled={disabled}
+                  className=" flex disabled:bg-gray-400 cursor-pointer w-full justify-center rounded-md bg-indigo-600 px-3 py-1.5 text-sm font-semibold leading-6 text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
                 >
-                  Download
+                 { disabled==""?"Download":"Loading"}
                 </button>
               </div>
               <div
@@ -126,6 +180,12 @@ export default function Home() {
                   className="flex w-full justify-center rounded-md bg-indigo-600 px-3 py-2 my-2 text-sm font-semibold leading-6 text-white shadow-sm hover:bg-indigo-500  focus-visible:outline-indigo-600"
                 >
                   Download Video
+                </button>
+                <button
+                  onClick={()=>{setdurl("");setdisabled("");seturl("")}}
+                  className="flex w-full justify-center rounded-md bg-indigo-600 px-3 py-2 my-2 text-sm font-semibold leading-6 text-white shadow-sm hover:bg-indigo-500  focus-visible:outline-indigo-600"
+                >
+                  Download Other Video
                 </button>
               </div>
             </div>
