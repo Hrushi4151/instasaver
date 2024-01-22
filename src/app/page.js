@@ -17,7 +17,7 @@ export default function Home() {
   const handlesubmit = async (e) => {
     e.preventDefault();
     alert(url);
-    const res = await fetch("http://localhost:3000/api/gettoken", {
+    const res = await fetch(`${process.env.NEXT_PUBLIC_HOST}api/gettoken`, {
       method: "POST",
       headers: {
         Accept: "*/*",
@@ -34,7 +34,7 @@ export default function Home() {
   const getdownlodurl = async () => {
     console.log(token);
     let status = "";
-    const res = await fetch("http://localhost:3000/api/getdownloadurl", {
+    const res = await fetch(`${process.env.NEXT_PUBLIC_HOST}api/getdownloadurl`, {
       method: "POST",
       headers: {
         Accept: "*/*",
