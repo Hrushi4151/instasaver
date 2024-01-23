@@ -29,10 +29,13 @@ export default function RootLayout({ children }) {
         type="image/<generated>"
         sizes="<generated>"
       />
+      <meta name="google-adsense-account" content="ca-pub-8683978034260199"></meta>
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(schemadata) }}
       />
+      <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8683978034260199"
+     crossorigin="anonymous"></script>
       <body className={inter.className}>
         <ToastContainer
           position="top-center"
