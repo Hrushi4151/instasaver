@@ -19,53 +19,69 @@ export default function Home() {
 
   const handlesubmit = async (e) => {
     e.preventDefault();
-    setdisabled("disabled")
-    if(url){
-     if(url.startsWith("https://www.instagram.com")){ const res = await fetch(`${process.env.NEXT_PUBLIC_HOST}api/gettoken`, {
-      method: "POST",
-      headers: {
-        Accept: "*/*",
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify({ url: url }),
-    });
-    const response = await res.json();
-    console.log(response.response);
-    if(response.response.job_id)
-    {
-      token = response.response.job_id;
-      setTimeout(getdownlodurl, 3000);
-    }
-    else{
-      setdisabled("")
-      seturl("");
-      toast.error("Invalid URL. Try Again", {
-        position: "top-center",
-        autoClose: 3000,
-        hideProgressBar: false,
-        closeOnClick: true,
-        pauseOnHover: true,
-        draggable: true,
-        progress: undefined,
-        theme: "colored",
-      });
-    }}else{
-      setdisabled("")
-      seturl("");
-      toast.error("Invalid URL. Try Again", {
-        position: "top-center",
-        autoClose: 3000,
-        hideProgressBar: false,
-        closeOnClick: true,
-        pauseOnHover: true,
-        draggable: true,
-        progress: undefined,
-        theme: "colored",
-      });
-    }
-  
-  }else{
-      setdisabled("")
+    setdisabled("disabled");
+    if (url) {
+      if (url.startsWith("https://www.instagram.com")) {
+        const res = await fetch(`${process.env.NEXT_PUBLIC_HOST}api/gettoken`, {
+          method: "POST",
+          headers: {
+            Accept: "*/*",
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({ url: url }),
+        });
+        const response = await res.json();
+        console.log(response.response);
+        if (response.response.data) {
+          let str = response.response.data;
+          str.replace(/\\u003C/g, "<")
+            .replace(/\\u003E/g, ">")
+            .replace(/\\u0022/g, '"');
+
+          var tempDiv = document.createElement("div");
+
+          //Set the innerHTML of the div with your HTML string
+          tempDiv.innerHTML = str;
+
+          // Get the anchor tag by its ID or any other selector
+          var myLink = tempDiv.getElementsByClassName(
+            "abutton is-success is-fullwidth  btn-premium mt-3"
+          )[0];
+
+          // Access the href property
+          var hrefValue = myLink.href;
+          setdurl(myLink.href)
+
+        } else {
+          setdisabled("");
+          seturl("");
+          toast.error("Invalid URL. Try Again", {
+            position: "top-center",
+            autoClose: 3000,
+            hideProgressBar: false,
+            closeOnClick: true,
+            pauseOnHover: true,
+            draggable: true,
+            progress: undefined,
+            theme: "colored",
+          });
+        }
+      } else {
+        setdisabled("");
+        seturl("");
+        toast.error("Invalid URL. Try Again", {
+          position: "top-center",
+          autoClose: 3000,
+          hideProgressBar: false,
+          closeOnClick: true,
+          pauseOnHover: true,
+          draggable: true,
+          progress: undefined,
+          theme: "colored",
+        });
+      }
+    } else {
+      setdisabled("");
       seturl("");
       toast.error("Enter URL", {
         position: "top-center",
@@ -78,52 +94,12 @@ export default function Home() {
         theme: "colored",
       });
     }
-
-    
-  };
-
-  const getdownlodurl = async () => {
-    console.log(token);
-    const res = await fetch(`${process.env.NEXT_PUBLIC_HOST}api/getdownloadurl`, {
-      method: "POST",
-      headers: {
-        Accept: "*/*",
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify({ token: token }),
-    });
-    const response = await res.json();
-
-    if (response.msg.status == "working") {
-      await getdownlodurl();
-    }
-    else
-    {
-      if((response.msg.payload[0].path)){console.log(response.msg.payload[0].path);
-    setdurl(response.msg.payload[0].path);}else{
-      setdisabled("")
-      seturl("");
-      toast.error("Invalid URL. Try Again", {
-        position: "top-center",
-        autoClose: 3000,
-        hideProgressBar: false,
-        closeOnClick: true,
-        pauseOnHover: true,
-        draggable: true,
-        progress: undefined,
-        theme: "colored",
-      });
-    }
-      
-  }
   };
 
   const dinwloadvideo = () => {
-    //e.preventDefault();
-    console.log("durl", durl); // Use console.log for debugging
     setTimeout(() => window.open(durl, "_blank"), 900);
     seturl("");
-    token="";
+    token = "";
   };
 
   return (
@@ -168,7 +144,7 @@ export default function Home() {
                   disabled={disabled}
                   className=" flex disabled:bg-gray-400 cursor-pointer w-full justify-center rounded-md bg-indigo-600 px-3 py-1.5 text-sm font-semibold leading-6 text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
                 >
-                 { disabled==""?"Download":"Loading"}
+                  {disabled == "" ? "Download" : "Loading"}
                 </button>
               </div>
               <div
@@ -198,7 +174,11 @@ export default function Home() {
                   Download Video
                 </button>
                 <button
-                  onClick={()=>{setdurl("");setdisabled("");seturl("")}}
+                  onClick={() => {
+                    setdurl("");
+                    setdisabled("");
+                    seturl("");
+                  }}
                   className="flex w-full justify-center rounded-md bg-indigo-600 px-3 py-2 my-2 text-sm font-semibold leading-6 text-white shadow-sm hover:bg-indigo-500  focus-visible:outline-indigo-600"
                 >
                   Download Other Video
@@ -208,16 +188,18 @@ export default function Home() {
           )}
         </div>
         <div class="ig-section">
-          <h2 class=" my-4 font-bold text-2xl">What is Instagram Downloader?</h2>
+          <h2 class=" my-4 font-bold text-2xl">
+            What is Instagram Downloader?
+          </h2>
           <p className="text-lg py-2">
             Instagram Downloader is a tool to download videos, photos, reels,
             stories and IGTV from Instagram online. Support download
             high-quality Instagram video in a few simple steps.
           </p>
           <p className="text-lg py-2">
-            <b>SaveIG.App</b> is developed with the purpose of allow users to
+            <b>InstaSaver</b> is developed with the purpose of allow users to
             download Instagram content (Videos, Photos, Reels, Stories, IGTV)
-            quickly. Just paste the Instagram link into the SaveIG input box to
+            quickly. Just paste the Instagram link into the InstaSaver input box to
             download any IG content.
           </p>
           <p className="text-lg py-2">
@@ -227,17 +209,19 @@ export default function Home() {
           </p>
         </div>
         <div class="ig-section ig-gr-content">
-          <h2 class=" my-4 font-bold text-2xl">SaveIG - Best Instagram Downloader 2024</h2>
+          <h2 class=" my-4 font-bold text-2xl">
+            InstaSaver - Best Instagram Downloader 2024
+          </h2>
           <p className="text-lg py-2">
-            <b>What is SaveIG?</b> SaveIG is an Instagram downloader that allows
+            <b>What is InstaSaver?</b> InstaSaver is an Instagram downloader that allows
             to download photos, videos, stories, Instagram Reels and IGTV from
-            Instagram in high quality. Just go to SaveIG.app and follow the
+            Instagram in high quality. Just go to InstaSaver and follow the
             instructions to download anything on IG in a few easy steps.
           </p>
           <p className="text-lg py-2">
-            SaveIG.app is a tool to download Instagram content on a web browser,
+            InstaSaver is a tool to download Instagram content on a web browser,
             no software installation required. Although born later than other
-            Instagram downloaders, SaveIG has many outstanding features, helping
+            Instagram downloaders, InstaSaver has many outstanding features, helping
             users to download all data on Instagram quickly.
           </p>
           <h3 class=" my-4 font-bold text-xl">Key features</h3>
@@ -249,7 +233,7 @@ export default function Home() {
               : Support download Instagram videos in high quality: Full HD,
               1080p, 2K, 4K, 8K with sound.
             </li>
-            <li >
+            <li>
               <a target="_blank" href="/en/instagram-photo-downloader">
                 <b>&lrm;Instagram Photo Downloader</b>
               </a>
@@ -292,7 +276,7 @@ export default function Home() {
         </div>
         <div class="ig-section guide-area ig-gr-content">
           <h2 class=" my-4 font-bold text-xl">
-            How to download Instagram photos and videos with SaveIG
+            How to download Instagram photos and videos with InstaSaver
           </h2>
           <p className="text-lg py-2">
             <b>Step 1</b>: Open the Instagram app on your phone or go to the
@@ -305,8 +289,8 @@ export default function Home() {
           </p>
           <p className="text-lg py-2">
             <b>Step 3</b>: Go to the website{" "}
-            <a target="_blank" href="https://saveig.app/en">
-              <b>SaveIG.app</b>
+            <a target="_blank" href="https://insta-saver.vercel.app/">
+              <b>InstaSaver</b>
             </a>
             , paste the Instagram link you just copied into input box and press
             the <strong>Download</strong> button.
@@ -318,7 +302,7 @@ export default function Home() {
           </p>
           <p className="text-lg py-2">
             <i>
-              With SaveIG.app you can download any Instagram content (Videos,
+              With InstaSaver you can download any Instagram content (Videos,
               Photos, Reels, Story, IGTV). We will continuously upgrade to bring
               you the best experience! Please share this tool with friends and
               family. Thank you!
@@ -333,9 +317,7 @@ export default function Home() {
             </p>
             <p className="text-lg py-2">
               Read our Terms of Service{" "}
-              <Link href={"/terms-and-services"} >
-                👉here👈
-              </Link>
+              <Link href={"/terms-and-services"}>👉here👈</Link>
             </p>
           </div>
         </div>
@@ -393,7 +375,7 @@ export default function Home() {
                       </li>
                       <li>
                         <i>
-                          (SaveIG.app works well on all devices (PC, Mac,
+                          (InstaSaver works well on all devices (PC, Mac,
                           Android, iOS).)
                         </i>
                       </li>
@@ -419,11 +401,11 @@ export default function Home() {
                 >
                   <div itemprop="text" className="py-2">
                     For iPhone, you need to use <b>Safari</b> browser on iOS 13
-                    or get <b>Documents by Readdle</b> app and go to SaveIG.app
+                    or get <b>Documents by Readdle</b> app and go to InstaSaver
                     → Paste Instagram video link → Download (
                     <a
                       target="_blank"
-                      href="https://saveig.app/en/how-to-download-instagram-videos-on-iphone"
+                      href="https://insta-saver.vercel.app/how-to-download-instagram-videos-on-iphone"
                     >
                       see instructions here
                     </a>
@@ -448,7 +430,7 @@ export default function Home() {
                   itemtype="https://schema.org/Answer"
                 >
                   <div itemprop="text" className="py-2">
-                    Copy the Instagram link → Go to SaveIG.app → Paste the
+                    Copy the Instagram link → Go to InstaSaver → Paste the
                     copied Instagram link into the input box → Download.
                   </div>
                 </div>
@@ -474,7 +456,7 @@ export default function Home() {
                     Absolutely, you can use{" "}
                     <a
                       target="_blank"
-                      href="https://saveig.app/en/instagram-private-downloader"
+                      href="https://insta-saver.vercel.app/instagram-private-downloader"
                     >
                       <b>Private Downloader</b>
                     </a>{" "}
@@ -502,8 +484,8 @@ export default function Home() {
                   <div itemprop="text" className="py-2">
                     Unfortunately, <b>Instagram</b> does not allow you to
                     download any content. You can go to the{" "}
-                    <a target="_blank" href="https://saveig.app/en">
-                      SaveIG.app
+                    <a target="_blank" href="https://insta-saver.vercel.app/">
+                      InstaSaver
                     </a>{" "}
                     website and follow the instructions to download any content
                     on IG.
@@ -517,7 +499,7 @@ export default function Home() {
                 itemtype="https://schema.org/Question"
               >
                 <h4 itemprop="name" className="text-lg py-2 font-semibold">
-                  Do I have to pay to use SaveIG to download Instagram photos
+                  Do I have to pay to use InstaSaver to download Instagram photos
                   and videos?
                 </h4>
                 <div
@@ -528,7 +510,7 @@ export default function Home() {
                   itemtype="https://schema.org/Answer"
                 >
                   <div itemprop="text" className="py-2">
-                    Absolutely not, SaveIG is a free Instagram downloader. You
+                    Absolutely not, InstaSaver is a free Instagram downloader. You
                     can download any Instagram video, photo, story, Insta Reels
                     and IGTV without paying any cost.
                   </div>

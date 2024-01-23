@@ -2,7 +2,7 @@ import React from 'react'
 
 const page = () => {
   return (
-    <div className='-[90vw] md:w-[80vw]  mx-auto'>
+    <div className='-[90vw] md:w-[80vw] px-6 mx-auto'>
 
 <h1 class=" my-4 font-bold text-2xl">Disclaimer for InstaSaver</h1>
 

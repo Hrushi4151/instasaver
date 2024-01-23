@@ -95,7 +95,7 @@ const page = () => {
         <div className="my-4">
           <h3 className="text-xl font-semibold">Changes to this privacy policy</h3>
           <p className="text-lg">
-            SaveIG.app has the discretion to update this privacy policy at any
+            InstaSaver.app has the discretion to update this privacy policy at any
             time. When we do, we will post a notification on the main page of
             our Site, revise the updated date at the bottom of this page. We
             encourage Users to frequently check this page for any changes to

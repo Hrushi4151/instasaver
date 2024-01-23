@@ -9,14 +9,14 @@ const page = () => {
           <i>
             How to download photos and videos from Instagram? This is a question
             that many Instagram users are interested in, in this article I will
-            show you how to use SaveIG.app to download photos and videos from
+            show you how to use InstaSaver to download photos and videos from
             Instagram online on PC, iPhone, Android.
           </i>
         </p>
         <p className="text-lg">
-          SaveIG.app is an Instagram downloader, allow to download photos,
+          InstaSaver is an Instagram downloader, allow to download photos,
           videos, Insta reels, story and IGTV from Instagram in the highest
-          quality. Just paste the Instagram link into the input box on SaveIG
+          quality. Just paste the Instagram link into the input box on InstaSaver
           and you can download any Instagram post content for free.
         </p>
         <h2 className="text-xl font-semibold my-2 mt-5">Step 1: Copy Instagram link</h2>
@@ -27,17 +27,17 @@ const page = () => {
         <p className="text-lg">
           <img
             className="block ml-auto mr-auto"
-            src="/saveig/imgs/how-to-web-step-1-min.jpg"
+            src="/how-to-web-step-1-min.jpg"
             width="800"
             height="527"
-            alt="SaveIG"
+            alt="InstaSaver"
           />
         </p>
-        <h2 className="text-xl font-semibold my-2 mt-5">Step 2: Paste the copied Instagram link into SaveIG</h2>
+        <h2 className="text-xl font-semibold my-2 mt-5">Step 2: Paste the copied Instagram link into InstaSaver</h2>
         <p className="text-lg">
           - Open a browser and go to the website:{" "}
-          <a target="_blank" href="https://saveig.app/en">
-            SaveIG.app
+          <a target="_blank" href="https://insta-saver.vercel.app/">
+            InstaSaver
           </a>
         </p>
         <p className="text-lg">
@@ -47,10 +47,10 @@ const page = () => {
         <p className="text-lg">
           <img
             className="block ml-auto mr-auto"
-            src="/saveig/imgs/how-to-web-step-2-min.jpg"
+            src="/how-to-web-step-2-min.jpg"
             width="800"
             height="411"
-            alt="SaveIG"
+            alt="InstaSaver"
           />
         </p>
         <h2 className="text-xl font-semibold my-2 mt-5">Step 3: Download photos or videos to your device</h2>
@@ -63,10 +63,10 @@ const page = () => {
         <p className="text-lg">
           <img
            className="block ml-auto mr-auto"
-            src="/saveig/imgs/how-to-web-step-3-min.jpg"
+            src="/how-to-web-step-3-min.jpg"
             width="800"
             height="418"
-            alt="SaveIG"
+            alt="InstaSaver"
           />
         </p>
         <p className="text-lg">
@@ -77,15 +77,15 @@ const page = () => {
           download, use <b>Private downloader</b>:{" "}
           <a
             target="_blank"
-            href="https://saveig.app/en/instagram-private-downloader"
+            href="https://insta-saver.vercel.app/instagram-private-downloader"
           >
-            https://saveig.app/en/instagram-private-downloader
+            https://insta-saver.vercel.app/instagram-private-downloader
           </a>{" "}
           and follow the instructions to download your photo or video.
         </p>
         <p className="text-lg">
           During use, if you encounter an error, please contact us for support:{" "}
-          <a href="mailto:sp.saveig@gmail.com">sp.saveig@gmail.com</a>
+          <a href="mailto:sp.InstaSaver@gmail.com">contact.instasaver@gmail.com</a>
         </p>
       </div>
     </>
