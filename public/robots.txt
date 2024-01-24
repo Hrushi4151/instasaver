@@ -1,0 +1,7 @@
+User-Agent: *
+Disallow: */1000*
+Disallow: /api/
+User-agent: *
+User-agent: Mediapartners-Google
+Allow: /
+Sitemap: https://insta-saver.vercel.app/sitemap.xml
