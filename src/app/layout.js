@@ -20,6 +20,7 @@ export default function RootLayout({ children }) {
     "@type": "Website",
     name: "InstaSvaer",
     url: "https://insta-saver.vercel.app/",
+    icon:"/logo.jpg"
   };
   return (
     <html lang="en">
