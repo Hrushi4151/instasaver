@@ -18,8 +18,8 @@ export default function RootLayout({ children }) {
   let schemadata = {
     "@context": "https://schema.org/",
     "@type": "Website",
-    name: "InstaSvaer",
-    url: "https://insta-saver.vercel.app/",
+    name: "SaveIG",
+    url: "https://saveig.vercel.app/",
     icon:"/favicon-16x16.png"
   };
   return (
