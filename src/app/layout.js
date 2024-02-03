@@ -8,9 +8,9 @@ import "react-toastify/dist/ReactToastify.css";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata = {
-  title: "InstaSaver | Download Instagram Reels, Photo, Story - InstaSaver",
+  title: "SaveIG | Download Instagram Reels, Photo, Story - SaveIG",
   description:
-    "Instagram Downloader | Download Instagram Video, Photo, Story - InstaSaver",
+    "Instagram Downloader | Download Instagram Video, Photo, Story - SaveIG",
   icon: "/logo.jpg",
 };
 
