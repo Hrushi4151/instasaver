@@ -9,14 +9,14 @@ const page = () => {
           <i>
             How to download photos and videos from Instagram? This is a question
             that many Instagram users are interested in, in this article I will
-            show you how to use InstaSaver to download photos and videos from
+            show you how to use SaveIG to download photos and videos from
             Instagram online on PC, iPhone, Android.
           </i>
         </p>
         <p className="text-lg">
-          InstaSaver is an Instagram downloader, allow to download photos,
+          SaveIG is an Instagram downloader, allow to download photos,
           videos, Insta reels, story and IGTV from Instagram in the highest
-          quality. Just paste the Instagram link into the input box on InstaSaver
+          quality. Just paste the Instagram link into the input box on SaveIG
           and you can download any Instagram post content for free.
         </p>
         <h2 className="text-xl font-semibold my-2 mt-5">Step 1: Copy Instagram link</h2>
@@ -30,14 +30,14 @@ const page = () => {
             src="/how-to-web-step-1-min.jpg"
             width="800"
             height="527"
-            alt="InstaSaver"
+            alt="SaveIG"
           />
         </p>
-        <h2 className="text-xl font-semibold my-2 mt-5">Step 2: Paste the copied Instagram link into InstaSaver</h2>
+        <h2 className="text-xl font-semibold my-2 mt-5">Step 2: Paste the copied Instagram link into SaveIG</h2>
         <p className="text-lg">
           - Open a browser and go to the website:{" "}
           <a target="_blank" href="https://insta-saver.vercel.app/">
-            InstaSaver
+            SaveIG
           </a>
         </p>
         <p className="text-lg">
@@ -50,7 +50,7 @@ const page = () => {
             src="/how-to-web-step-2-min.jpg"
             width="800"
             height="411"
-            alt="InstaSaver"
+            alt="SaveIG"
           />
         </p>
         <h2 className="text-xl font-semibold my-2 mt-5">Step 3: Download photos or videos to your device</h2>
@@ -66,7 +66,7 @@ const page = () => {
             src="/how-to-web-step-3-min.jpg"
             width="800"
             height="418"
-            alt="InstaSaver"
+            alt="SaveIG"
           />
         </p>
         <p className="text-lg">
