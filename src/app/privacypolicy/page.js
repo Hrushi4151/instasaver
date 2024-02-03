@@ -59,7 +59,7 @@ const page = () => {
         </div>
         <div className="my-4">
           <h3 className="text-xl font-semibold">How we use collected information</h3>
-          <p>InstaSaver does not collect or store your data, period.</p>
+          <p>SaveIG does not collect or store your data, period.</p>
         </div>
         <div className="my-4">
           <h3 className="text-xl font-semibold">Advertising</h3>
@@ -95,7 +95,7 @@ const page = () => {
         <div className="my-4">
           <h3 className="text-xl font-semibold">Changes to this privacy policy</h3>
           <p className="text-lg">
-            InstaSaver.app has the discretion to update this privacy policy at any
+            SaveIG.vercel.app has the discretion to update this privacy policy at any
             time. When we do, we will post a notification on the main page of
             our Site, revise the updated date at the bottom of this page. We
             encourage Users to frequently check this page for any changes to
