@@ -1,4 +1,4 @@
-import Link from 'next/link'
+Gimport Link from 'next/link'
 import React from 'react'
 
 
@@ -12,7 +12,7 @@ const Footer = () => {
         <div class="sm:flex sm:items-center sm:justify-between">
             <a href="https://insta-saver.vercel.app/" class="flex md:justify-start justify-center items-center mb-4 sm:mb-0 space-x-3 rtl:space-x-reverse">
                 <img src="/logoinside.jpg" class="h-10" alt="instasaver Logo" />
-                <span class="self-center text-2xl font-semibold whitespace-nowrap text-center text-white">InstaSaver</span>
+                <span class="self-center text-2xl font-semibold whitespace-nowrap text-center text-white">SaveIG</span>
             </a>
             <ul class="flex flex-wrap mb-6 text-sm font-medium sm:mb-0 text-gray-400 justify-center items-center">
                 <li>
@@ -33,7 +33,7 @@ const Footer = () => {
             </ul>
         </div>
         <hr class="my-6 sm:mx-auto border-gray-700 lg:my-8" />
-        <span class="block text-sm  text-center text-gray-400">© 2024 <Link href={"/"} class="hover:underline">InstaSaver</Link>. All Rights Reserved.</span>
+        <span class="block text-sm  text-center text-gray-400">© 2024 <Link href={"/"} class="hover:underline">SaveIG</Link>. All Rights Reserved.</span>
     </div>
 </footer>
 
