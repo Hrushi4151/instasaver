@@ -6,7 +6,7 @@ export default function sitemap() {
       changeFrequency: 'yearly',
       priority: 1,
     },
-    {
+    { 
       url: `${process.env.NEXT_PUBLIC_HOST}about`,
       lastModified: new Date(),
       changeFrequency: 'monthly',
