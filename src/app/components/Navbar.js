@@ -15,7 +15,7 @@ const Navbar = () => {
   <div className="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
     <a href="https://insta-saver.vercel.app" className="flex items-center space-x-3 rtl:space-x-reverse">
         <img src="/logoinside.jpg" className="h-12" alt="instasaver Logo" />
-        <span className="self-center text-2xl font-semibold whitespace-nowrap text-white">InstaSaver</span>
+        <span className="self-center text-2xl font-semibold whitespace-nowrap text-white">SaveIG</span>
     </a>
     <button onClick={()=>settoogle(!toogle)} data-collapse-toggle="navbar-default" type="button" className="inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-gray-500 rounded-lg md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 " aria-controls="navbar-default" aria-expanded="false">
         <span className="sr-only">Open main menu</span>
