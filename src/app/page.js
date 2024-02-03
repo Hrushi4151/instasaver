@@ -197,9 +197,9 @@ export default function Home() {
             high-quality Instagram video in a few simple steps.
           </p>
           <p className="text-lg py-2">
-            <b>InstaSaver</b> is developed with the purpose of allow users to
+            <b>SaveIG</b> is developed with the purpose of allow users to
             download Instagram content (Videos, Photos, Reels, Stories, IGTV)
-            quickly. Just paste the Instagram link into the InstaSaver input box to
+            quickly. Just paste the Instagram link into the SaveIG input box to
             download any IG content.
           </p>
           <p className="text-lg py-2">
@@ -210,18 +210,18 @@ export default function Home() {
         </div>
         <div class="ig-section ig-gr-content">
           <h2 class=" my-4 font-bold text-2xl">
-            InstaSaver - Best Instagram Downloader 2024
+            SaveIG - Best Instagram Downloader 2024
           </h2>
           <p className="text-lg py-2">
-            <b>What is InstaSaver?</b> InstaSaver is an Instagram downloader that allows
+            <b>What is SaveIG?</b> SaveIG is an Instagram downloader that allows
             to download photos, videos, stories, Instagram Reels and IGTV from
-            Instagram in high quality. Just go to InstaSaver and follow the
+            Instagram in high quality. Just go to SaveIG and follow the
             instructions to download anything on IG in a few easy steps.
           </p>
           <p className="text-lg py-2">
-            InstaSaver is a tool to download Instagram content on a web browser,
+            SaveIG is a tool to download Instagram content on a web browser,
             no software installation required. Although born later than other
-            Instagram downloaders, InstaSaver has many outstanding features, helping
+            Instagram downloaders, SaveIG has many outstanding features, helping
             users to download all data on Instagram quickly.
           </p>
           <h3 class=" my-4 font-bold text-xl">Key features</h3>
@@ -234,40 +234,40 @@ export default function Home() {
               1080p, 2K, 4K, 8K with sound.
             </li>
             <li>
-              <a target="_blank" href="/en/instagram-photo-downloader">
+              <p>
                 <b>&lrm;Instagram Photo Downloader</b>
-              </a>
+              </p>
               : Support download Instagram photos from posts easily, this
               feature allows you to choose the quality and size of images before
               saving Instagram photos to the device.
             </li>
             <li>
-              <a target="_blank" href="/en/instagram-reels-downloader">
+              <p>
                 <b>Reels Downloader</b>
-              </a>
+              </p>
               : This feature allows download Instagram Reels videos in HD
               quality with sound. Support download Instagram Reels on PC,
               iPhone, Android.
             </li>
             <li>
-              <a target="_blank" href="/en/instagram-story-downloader">
+              <p>
                 <b>Story Downloader</b>
-              </a>
+              </p>
               : Download Instagram Story or Highlights in high quality, you can
               download Instagram Stories by username or link in 1080p.
             </li>
             <li>
-              <a target="_blank" href="/en/instagram-igtv-downloader">
+              <p>
                 <b>IGTV Downloader</b>
-              </a>
+              </p>
               : IGTV is Instagram long time video, this feature allows you to
               download IGTV video from Instagram in high quality: 1080p, 2K, 4K,
               8K without install software.
             </li>
             <li>
-              <a target="_blank" href="/en/instagram-private-downloader">
+              <p>
                 <b>Private Downloader</b>
-              </a>
+              </p>
               : Allow to download Instagram post content from private account
               without any restrictions, download Videos, Photos, Insta Reels,
               Story and IGTV from private Instagram account for free.
@@ -276,7 +276,7 @@ export default function Home() {
         </div>
         <div class="ig-section guide-area ig-gr-content">
           <h2 class=" my-4 font-bold text-xl">
-            How to download Instagram photos and videos with InstaSaver
+            How to download Instagram photos and videos with SaveIG
           </h2>
           <p className="text-lg py-2">
             <b>Step 1</b>: Open the Instagram app on your phone or go to the
@@ -290,7 +290,7 @@ export default function Home() {
           <p className="text-lg py-2">
             <b>Step 3</b>: Go to the website{" "}
             <a target="_blank" href="https://insta-saver.vercel.app/">
-              <b>InstaSaver</b>
+              <b>SaveIG</b>
             </a>
             , paste the Instagram link you just copied into input box and press
             the <strong>Download</strong> button.
@@ -302,7 +302,7 @@ export default function Home() {
           </p>
           <p className="text-lg py-2">
             <i>
-              With InstaSaver you can download any Instagram content (Videos,
+              With SaveIG you can download any Instagram content (Videos,
               Photos, Reels, Story, IGTV). We will continuously upgrade to bring
               you the best experience! Please share this tool with friends and
               family. Thank you!
@@ -375,7 +375,7 @@ export default function Home() {
                       </li>
                       <li>
                         <i>
-                          (InstaSaver works well on all devices (PC, Mac,
+                          (SaveIG works well on all devices (PC, Mac,
                           Android, iOS).)
                         </i>
                       </li>
@@ -401,7 +401,7 @@ export default function Home() {
                 >
                   <div itemprop="text" className="py-2">
                     For iPhone, you need to use <b>Safari</b> browser on iOS 13
-                    or get <b>Documents by Readdle</b> app and go to InstaSaver
+                    or get <b>Documents by Readdle</b> app and go to SaveIG
                     → Paste Instagram video link → Download (
                     <a
                       target="_blank"
@@ -430,7 +430,7 @@ export default function Home() {
                   itemtype="https://schema.org/Answer"
                 >
                   <div itemprop="text" className="py-2">
-                    Copy the Instagram link → Go to InstaSaver → Paste the
+                    Copy the Instagram link → Go to SaveIG → Paste the
                     copied Instagram link into the input box → Download.
                   </div>
                 </div>
@@ -485,7 +485,7 @@ export default function Home() {
                     Unfortunately, <b>Instagram</b> does not allow you to
                     download any content. You can go to the{" "}
                     <a target="_blank" href="https://insta-saver.vercel.app/">
-                      InstaSaver
+                      SaveIG
                     </a>{" "}
                     website and follow the instructions to download any content
                     on IG.
@@ -499,7 +499,7 @@ export default function Home() {
                 itemtype="https://schema.org/Question"
               >
                 <h4 itemprop="name" className="text-lg py-2 font-semibold">
-                  Do I have to pay to use InstaSaver to download Instagram photos
+                  Do I have to pay to use SaveIG to download Instagram photos
                   and videos?
                 </h4>
                 <div
@@ -510,7 +510,7 @@ export default function Home() {
                   itemtype="https://schema.org/Answer"
                 >
                   <div itemprop="text" className="py-2">
-                    Absolutely not, InstaSaver is a free Instagram downloader. You
+                    Absolutely not, SaveIG is a free Instagram downloader. You
                     can download any Instagram video, photo, story, Insta Reels
                     and IGTV without paying any cost.
                   </div>
