@@ -19,9 +19,9 @@ export default function RootLayout({ children }) {
     "@context": "https://schema.org/",
     "@type": "Website",
     name: "SaveIG",
-    url: "https://saveig.vercel.app/",
+    url: "https://saveig51.vercel.app/",
     icon:"/favicon-16x16.png"
-  };
+  }
   return (
     <html lang="en">
       <link
