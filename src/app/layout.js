@@ -31,9 +31,6 @@ export default function RootLayout({ children }) {
         sizes="<generated>"
       />
     <meta name="google-adsense-account" content="ca-pub-8683978034260199">
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={__html: JSON.stringify(schemadata) }/>
       <body className={inter.className}>
         <ToastContainer
           position="top-center"
@@ -51,6 +48,10 @@ export default function RootLayout({ children }) {
         {children}
         <Footer />
       </body>
+            <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{__html: JSON.stringify(schemadata)}
+      />
     </html>
   );
 }
