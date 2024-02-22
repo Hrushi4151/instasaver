@@ -1,0 +1,7 @@
+User-agent: *
+Disallow: /wp-admin/
+User-agent: SemrushBot
+Disallow: /
+User-agent: AhrefsBot
+Disallow: /
+Sitemap: https://saveig51.vercel.app/sitemap.xml
