@@ -14,7 +14,7 @@ export const metadata = {
   icon: "/logo.ico",
 };
 
-export default function RootLayout({ children }) {
+export default function RootLayout({ children }){
   let schemadata = {
     "@context": "https://schema.org/",
     "@type": "Website",
@@ -33,8 +33,8 @@ export default function RootLayout({ children }) {
         sizes="<generated>"
       />
     <meta name="google-adsense-account" content="ca-pub-8683978034260199">
-          <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(schemadata) }}/>
-  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8683978034260199"
+    <script type="application/ld+json" dangerouslySetInnerHTML={__html: JSON.stringify(schemadata)}/>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8683978034260199"
      crossorigin="anonymous"></script>
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-VZQRFRCY3D"></script>
       <body className={inter.className}>
