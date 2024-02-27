@@ -18,15 +18,17 @@ export default function RootLayout({ children }) {
   let schemadata = {
     "@context": "https://schema.org/",
     "@type": "Website",
-    name: "SaveIG",
-    url: "https://saveig51.vercel.app/",
-    icon:"/favicon-16x16.png"
+    "name": "SaveIG",
+    "alternateName":"SaveIG | Instagram Reel Downloader",
+    "url": "https://saveig51.vercel.app/",
+    "description":"SaveIG | Download Instagram Reels, Photo, Story for Free - SaveIG",
+    icon:"/logo.ico",
   }
   return (
     <html lang="en">
       <link
         rel="icon"
-        href="/favicon-16x16.png"
+        href="/logo.ico"
         type="image/<generated>"
         sizes="<generated>"
       />
