@@ -11,19 +11,19 @@ export const metadata = {
   title: "SaveIG | Download Instagram Reels, Photo, Story - SaveIG",
   description:
     "Instagram Downloader | Download Instagram Video, Photo, Story - SaveIG",
-  icon: "/logo.jpg",
+  icon: "/logo.ico",
 };
 
 export default function RootLayout({ children }) {
   let schemadata = {
     "@context": "https://schema.org/",
     "@type": "Website",
-    "name": "SaveIG",
+    "name": "SaveIG | Download Instagram Reels, Photo, Story",
     "alternateName":"SaveIG | Instagram Reel Downloader",
     "url": "https://saveig51.vercel.app/",
     "description":"SaveIG | Download Instagram Reels, Photo, Story for Free - SaveIG",
-    icon:"/logo.ico",
-  }
+    "icon":"/logo.ico",
+  };
   return (
     <html lang="en">
       <link
