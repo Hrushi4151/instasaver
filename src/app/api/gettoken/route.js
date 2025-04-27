@@ -53,19 +53,18 @@ export async function POST(req) {
     const htmlContent = data.data;
 
     // Extract thumbnail and download URL from HTML using regex
-    const thumbnailMatch = htmlContent.match(/<img[^>]*src="([^"]+)"[^>]*>/);
-    const downloadLinkMatch = htmlContent.match(/<a[^>]*href="([^"]+)"[^>]*class="[^"]*abutton[^"]*"[^>]*>/);
+    // const thumbnailMatch = htmlContent.match(/<img[^>]*src="([^"]+)"[^>]*>/);
+    // const downloadLinkMatch = htmlContent.match(/<a[^>]*href="([^"]+)"[^>]*class="[^"]*abutton[^"]*"[^>]*>/);
 
-    const thumbnail = thumbnailMatch ? thumbnailMatch[1] : null;
-    const download = downloadLinkMatch ? downloadLinkMatch[1] : null;
+    // const thumbnail = thumbnailMatch ? thumbnailMatch[1] : null;
+    // const download = downloadLinkMatch ? downloadLinkMatch[1] : null;
 
-    if (!thumbnail || !download) {
-      return NextResponse.json({ error: "Failed to extract thumbnail or download URL." }, { status: 400 });
-    }
+    // if (!thumbnail || !download) {
+    //   return NextResponse.json({ error: "Failed to extract thumbnail or download URL." }, { status: 400 });
+    // }
 
     return NextResponse.json({
-      thumbnail,
-      download
+              data
     });
 
   } catch (error) {
