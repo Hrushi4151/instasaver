@@ -17,7 +17,7 @@ export async function POST(req,res){
                     "Origin":"https://saveig.app",
                     "Referer":"https://saveig.app/"
           },
-          body: `q=${url}&lang=en`,
+          body: `url=${url}&lang=en`,
         });
         const response = await myres.json();
         console.log(response);
