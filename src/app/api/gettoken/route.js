@@ -48,25 +48,24 @@ export async function POST(req) {
       body: formData,
     });
 
-    const data = await myres.json();
+    const response = await myres.json();
 
-    const htmlContent = data.data;
+    // const htmlContent = data.data;
 
-    // Extract thumbnail and download URL from HTML using regex
-    const thumbnailMatch = htmlContent.match(/<img[^>]*src="([^"]+)"[^>]*>/);
-    const downloadLinkMatch = htmlContent.match(/<a[^>]*href="([^"]+)"[^>]*class="[^"]*abutton[^"]*"[^>]*>/);
+    // // Extract thumbnail and download URL from HTML using regex
+    // const thumbnailMatch = htmlContent.match(/<img[^>]*src="([^"]+)"[^>]*>/);
+    // const downloadLinkMatch = htmlContent.match(/<a[^>]*href="([^"]+)"[^>]*class="[^"]*abutton[^"]*"[^>]*>/);
 
-    const thumbnail = thumbnailMatch ? thumbnailMatch[1] : null;
-    const download = downloadLinkMatch ? downloadLinkMatch[1] : null;
+    // const thumbnail = thumbnailMatch ? thumbnailMatch[1] : null;
+    // const download = downloadLinkMatch ? downloadLinkMatch[1] : null;
 
-    if (!thumbnail || !download) {
-      return NextResponse.json({ error: "Failed to extract thumbnail or download URL." }, { status: 400 });
-    }
+    // if (!thumbnail || !download) {
+    //   return NextResponse.json({ error: "Failed to extract thumbnail or download URL." }, { status: 400 });
+    // }
 
-    return NextResponse.json({
-      thumbnail,
-      download
-    });
+    console.log(response);
+          
+ return NextResponse.json({"status":200,response});
 
   } catch (error) {
     console.error(error);
