@@ -47,7 +47,7 @@ export async function POST(req) {
       body: formData,
     });
 
-    const response = await myres.json();
+    // const response = await myres.json();
 
     // const htmlContent = data.data;
 
@@ -62,9 +62,9 @@ export async function POST(req) {
     //   return NextResponse.json({ error: "Failed to extract thumbnail or download URL." }, { status: 400 });
     // }
 
-    console.log(response);
+    // console.log(response);
           
- return NextResponse.json({"status":200,response});
+ return NextResponse.json({"status":200});
 
   } catch (error) {
     console.error(error);
