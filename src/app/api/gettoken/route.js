@@ -43,7 +43,6 @@ export async function POST(req) {
         "Accept": "*/*",
         "Origin": "https://saveig.app",
         "Referer": "https://saveig.app/"
-        // ❌ Don't manually set Content-Type when using FormData.
       },
       body: formData,
     });
@@ -69,6 +68,6 @@ export async function POST(req) {
 
   } catch (error) {
     console.error(error);
-    return NextResponse.json({ error: "Internal server error" }, { status: 500 });
+    return NextResponse.json({ error: "Internal server error" }, { status: 500,error });
   }
 }
