@@ -32,25 +32,9 @@ export default function Home() {
         });
         const response = await res.json();
         console.log(response);
-        if (response.response.data) {
-          let str = response.response.data;
-          str.replace(/\\u003C/g, "<")
-            .replace(/\\u003E/g, ">")
-            .replace(/\\u0022/g, '"');
-
-          var tempDiv = document.createElement("div");
-
-          //Set the innerHTML of the div with your HTML string
-          tempDiv.innerHTML = str;
-
-          // Get the anchor tag by its ID or any other selector
-          var myLink = tempDiv.getElementsByClassName(
-            "abutton is-success is-fullwidth  btn-premium mt-3"
-          )[0];
-
-          // Access the href property
-          var hrefValue = myLink.href;
-          setdurl(myLink.href)
+        if (response.status == 200) {
+        
+          setdurl(response.response);
 
         } else {
           setdisabled("");
@@ -97,7 +81,7 @@ export default function Home() {
   };
 
   const dinwloadvideo = () => {
-    setTimeout(() => window.open(durl, "_blank"), 900);
+    setTimeout(() => window.open(durl.aHrefs[0], "_blank"), 900);
     seturl("");
     token = "";
   };
@@ -161,17 +145,17 @@ export default function Home() {
           {durl && (
             <div className="flex w-fit justify-center items-center mx-auto">
               <div className="h-auto w-auto">
-                <video
-                  onClick={() => alert("fgfgfg")}
+                <img
+                  alt="Instagram"
                   className="w-[250px] h-[400px] object-cover"
-                  src={durl && durl}
+                  src={durl && durl.imgSrcs[0]}
                 />
 
                 <button
                   onClick={dinwloadvideo}
                   className="flex w-full justify-center rounded-md bg-indigo-600 px-3 py-2 my-2 text-sm font-semibold leading-6 text-white shadow-sm hover:bg-indigo-500  focus-visible:outline-indigo-600"
                 >
-                  Download Video
+                  Click to Download 
                 </button>
                 <button
                   onClick={() => {
@@ -181,7 +165,7 @@ export default function Home() {
                   }}
                   className="flex w-full justify-center rounded-md bg-indigo-600 px-3 py-2 my-2 text-sm font-semibold leading-6 text-white shadow-sm hover:bg-indigo-500  focus-visible:outline-indigo-600"
                 >
-                  Download Other Video
+                  Download More
                 </button>
               </div>
             </div>
@@ -197,9 +181,9 @@ export default function Home() {
             high-quality Instagram video in a few simple steps.
           </p>
           <p className="text-lg py-2">
-            <b>SaveIG</b> is developed with the purpose of allow users to
+            <b>InstaSaver</b> is developed with the purpose of allow users to
             download Instagram content (Videos, Photos, Reels, Stories, IGTV)
-            quickly. Just paste the Instagram link into the SaveIG input box to
+            quickly. Just paste the Instagram link into the InstaSaver input box to
             download any IG content.
           </p>
           <p className="text-lg py-2">
@@ -210,18 +194,18 @@ export default function Home() {
         </div>
         <div class="ig-section ig-gr-content">
           <h2 class=" my-4 font-bold text-2xl">
-            SaveIG - Best Instagram Downloader 2024
+            InstaSaver - Best Instagram Downloader 2024
           </h2>
           <p className="text-lg py-2">
-            <b>What is SaveIG?</b> SaveIG is an Instagram downloader that allows
+            <b>What is InstaSaver?</b> InstaSaver is an Instagram downloader that allows
             to download photos, videos, stories, Instagram Reels and IGTV from
-            Instagram in high quality. Just go to SaveIG and follow the
+            Instagram in high quality. Just go to InstaSaver and follow the
             instructions to download anything on IG in a few easy steps.
           </p>
           <p className="text-lg py-2">
-            SaveIG is a tool to download Instagram content on a web browser,
+            InstaSaver is a tool to download Instagram content on a web browser,
             no software installation required. Although born later than other
-            Instagram downloaders, SaveIG has many outstanding features, helping
+            Instagram downloaders, InstaSaver has many outstanding features, helping
             users to download all data on Instagram quickly.
           </p>
           <h3 class=" my-4 font-bold text-xl">Key features</h3>
@@ -234,40 +218,40 @@ export default function Home() {
               1080p, 2K, 4K, 8K with sound.
             </li>
             <li>
-              <p>
+              <a target="_blank" href="/en/instagram-photo-downloader">
                 <b>&lrm;Instagram Photo Downloader</b>
-              </p>
+              </a>
               : Support download Instagram photos from posts easily, this
               feature allows you to choose the quality and size of images before
               saving Instagram photos to the device.
             </li>
             <li>
-              <p>
+              <a target="_blank" href="/en/instagram-reels-downloader">
                 <b>Reels Downloader</b>
-              </p>
+              </a>
               : This feature allows download Instagram Reels videos in HD
               quality with sound. Support download Instagram Reels on PC,
               iPhone, Android.
             </li>
             <li>
-              <p>
+              <a target="_blank" href="/en/instagram-story-downloader">
                 <b>Story Downloader</b>
-              </p>
+              </a>
               : Download Instagram Story or Highlights in high quality, you can
               download Instagram Stories by username or link in 1080p.
             </li>
             <li>
-              <p>
+              <a target="_blank" href="/en/instagram-igtv-downloader">
                 <b>IGTV Downloader</b>
-              </p>
+              </a>
               : IGTV is Instagram long time video, this feature allows you to
               download IGTV video from Instagram in high quality: 1080p, 2K, 4K,
               8K without install software.
             </li>
             <li>
-              <p>
+              <a target="_blank" href="/en/instagram-private-downloader">
                 <b>Private Downloader</b>
-              </p>
+              </a>
               : Allow to download Instagram post content from private account
               without any restrictions, download Videos, Photos, Insta Reels,
               Story and IGTV from private Instagram account for free.
@@ -276,7 +260,7 @@ export default function Home() {
         </div>
         <div class="ig-section guide-area ig-gr-content">
           <h2 class=" my-4 font-bold text-xl">
-            How to download Instagram photos and videos with SaveIG
+            How to download Instagram photos and videos with InstaSaver
           </h2>
           <p className="text-lg py-2">
             <b>Step 1</b>: Open the Instagram app on your phone or go to the
@@ -290,7 +274,7 @@ export default function Home() {
           <p className="text-lg py-2">
             <b>Step 3</b>: Go to the website{" "}
             <a target="_blank" href="https://insta-saver.vercel.app/">
-              <b>SaveIG</b>
+              <b>InstaSaver</b>
             </a>
             , paste the Instagram link you just copied into input box and press
             the <strong>Download</strong> button.
@@ -302,7 +286,7 @@ export default function Home() {
           </p>
           <p className="text-lg py-2">
             <i>
-              With SaveIG you can download any Instagram content (Videos,
+              With InstaSaver you can download any Instagram content (Videos,
               Photos, Reels, Story, IGTV). We will continuously upgrade to bring
               you the best experience! Please share this tool with friends and
               family. Thank you!
@@ -375,7 +359,7 @@ export default function Home() {
                       </li>
                       <li>
                         <i>
-                          (SaveIG works well on all devices (PC, Mac,
+                          (InstaSaver works well on all devices (PC, Mac,
                           Android, iOS).)
                         </i>
                       </li>
@@ -401,7 +385,7 @@ export default function Home() {
                 >
                   <div itemprop="text" className="py-2">
                     For iPhone, you need to use <b>Safari</b> browser on iOS 13
-                    or get <b>Documents by Readdle</b> app and go to SaveIG
+                    or get <b>Documents by Readdle</b> app and go to InstaSaver
                     → Paste Instagram video link → Download (
                     <a
                       target="_blank"
@@ -430,7 +414,7 @@ export default function Home() {
                   itemtype="https://schema.org/Answer"
                 >
                   <div itemprop="text" className="py-2">
-                    Copy the Instagram link → Go to SaveIG → Paste the
+                    Copy the Instagram link → Go to InstaSaver → Paste the
                     copied Instagram link into the input box → Download.
                   </div>
                 </div>
@@ -485,7 +469,7 @@ export default function Home() {
                     Unfortunately, <b>Instagram</b> does not allow you to
                     download any content. You can go to the{" "}
                     <a target="_blank" href="https://insta-saver.vercel.app/">
-                      SaveIG
+                      InstaSaver
                     </a>{" "}
                     website and follow the instructions to download any content
                     on IG.
@@ -499,7 +483,7 @@ export default function Home() {
                 itemtype="https://schema.org/Question"
               >
                 <h4 itemprop="name" className="text-lg py-2 font-semibold">
-                  Do I have to pay to use SaveIG to download Instagram photos
+                  Do I have to pay to use InstaSaver to download Instagram photos
                   and videos?
                 </h4>
                 <div
@@ -510,7 +494,7 @@ export default function Home() {
                   itemtype="https://schema.org/Answer"
                 >
                   <div itemprop="text" className="py-2">
-                    Absolutely not, SaveIG is a free Instagram downloader. You
+                    Absolutely not, InstaSaver is a free Instagram downloader. You
                     can download any Instagram video, photo, story, Insta Reels
                     and IGTV without paying any cost.
                   </div>
