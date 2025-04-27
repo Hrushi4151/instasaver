@@ -31,7 +31,7 @@ export default function Home() {
           body: JSON.stringify({ url: url }),
         });
         const response = await res.json();
-        console.log(response.response);
+        console.log(response);
         if (response.response.data) {
           let str = response.response.data;
           str.replace(/\\u003C/g, "<")
