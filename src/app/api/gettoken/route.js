@@ -47,7 +47,7 @@ export async function POST(req) {
       body: formData,
     });
 
-     const response = await myres.json();
+   //  const response = await myres.json();
 
     // const htmlContent = data.data;
 
@@ -64,7 +64,7 @@ export async function POST(req) {
 
     // console.log(response);
           
- return NextResponse.json({"status":200,"response":response});
+ return NextResponse.json({"status":200,"response":myres});
 
   } catch (error) {
     console.error(error);
