@@ -5,7 +5,7 @@ export async function POST(req,res){
   const body=await req.json();
   let url=body.url;
   console.log(url)
-        const myres = await fetch("https://v3.saveig.app/api/ajaxSearch", {
+        const myres = await fetch("https://v3.savevid.net/api/ajaxSearch", {
           credentials: 'include',
                   mode: 'no-cors',
                   method: "POST",
